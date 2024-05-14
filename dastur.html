@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Uzum Market Bot</title>
+    <script>
+        function sendMessage() {
+            var messageInput = document.getElementById("messageInput");
+            var chatContainer = document.getElementById("chatContainer");
+
+            // Foydalanuvchidan xabarni o'qiymiz
+            var messageText = messageInput.value;
+
+            // Xabarni qo'shish
+            var messageElement = document.createElement("p");
+            messageElement.textContent = "Siz: " + messageText;
+            chatContainer.appendChild(messageElement);
+
+            // Uzum Market boti javobini olish uchun API-ga so'rov jo'natish
+            // Örn.: fetch('https://api.example.com/bot', {method: 'POST', body: {message: messageText}})
+            // Uzum Market botining javobini UI-ga qo'yish uchun quyidagi qatorlarni ishlatish mumkin
+           var botResponse = "Assalomu alaykum, sizga qanday yordam berishim mumkin?";
+
+            var botResponseElement = document.createElement("p");
+            botResponseElement.textContent = "Bot: " + botResponse;
+            chatContainer.appendChild(botResponseElement);
+
+            // Foydalanuvchi xabarni tozalash
+            messageInput.value = "";
+        }
+    </script>
+</head>
+<body>
+    <h1>Uzum Market Bot</h1>
+    <div id="chatContainer"></div>
+    <input type="text" id="messageInput" placeholder="Xabar kiriting...">
+    <button onclick="sendMessage()">Jo'natish</button>
+</body>
+</html>
